@@ -51,6 +51,7 @@ struct FetchService {
         //Decode data
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
         let characters = try decoder .decode([Character].self, from: data)
         
         //Return data
@@ -68,6 +69,8 @@ struct FetchService {
         }
         
         let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
         let deaths = try decoder.decode([Death].self, from: data)
         
         for death in deaths {
